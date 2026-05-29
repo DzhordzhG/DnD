@@ -11,5 +11,14 @@
                    FontSize="24"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"/>
-    </Grid>
+
+		<Button Content="Create Character"
+                    Command="{Binding OpenCharacterCreatorCommand}"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
+				    Foreground="Green"
+				    Background="Transparent"
+                    Margin="100"/>
+
+	</Grid>
 </Window>
