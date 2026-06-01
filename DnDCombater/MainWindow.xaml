@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DnDCombater"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+		WindowStartupLocation="CenterScreen"
+		Icon="pack://application:,,,/Resources/D20.ico"
+        Title="DnD Combater" Height="450" Width="800">
     <Grid>
         <TextBlock Text="{Binding Title}"
                    FontSize="24"

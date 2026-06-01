@@ -5,29 +5,117 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DnDCombater.Views"
         mc:Ignorable="d"
-        Title="Create Character" Height="450" Width="800">
-    <Grid>
+		WindowStartupLocation="CenterScreen"
+		Icon="pack://application:,,,/Resources/D20.ico"
+		ResizeMode="CanMinimize"
+	Title="Create Character" Height="450" Width="800">
+	<Window.Resources>
+		<Style TargetType="TextBlock">
+			<Setter Property="FontWeight" Value="Bold"/>
+			<Setter Property="Foreground" Value="White"/>
+			<Setter Property="TextAlignment" Value="Center"/>
+			<Setter Property="FontFamily" Value="Georgia"/>
+			<Setter Property="HorizontalAlignment" Value="Center"/>
+			<Setter Property="VerticalAlignment" Value="Center"/>
+			<Setter Property="Background" Value="Transparent"/>
+		</Style>
+		<Style TargetType="Button">
+			<Setter Property="FontWeight" Value="Bold"/>
+			<Setter Property="Foreground" Value="White"/>
+			<Setter Property="FontFamily" Value="Georgia"/>
+			<Setter Property="HorizontalAlignment" Value="Stretch"/>
+		</Style>
+		<Style TargetType="TextBox">
+			<Setter Property="FontWeight" Value="DemiBold"/>
+			<Setter Property="Foreground" Value="Black"/>
+			<Setter Property="Background" Value="White"/>
+			<Setter Property="VerticalAlignment" Value="Center"/>
+			<Setter Property="FontFamily" Value="Georgia"/>
+			<Setter Property="HorizontalAlignment" Value="Stretch"/>
+		</Style>
+	</Window.Resources>
+	<Grid Background="Black" Margin="10">
 
-		<StackPanel Margin="10">
-			<TextBlock Text="Name:" 
-					   Background="LightGoldenrodYellow"/>
-			<TextBox Text="{Binding Name}" />
-			<TextBlock Text="HP:"
-					   Background="LightGoldenrodYellow"/>
-			<TextBox Text="{Binding HP}" />
-			<TextBlock Text="AC:"
-					   Background="LightGoldenrodYellow"/>
-			<TextBox Text="{Binding AC}" />
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*" />
+			<RowDefinition Height="20" />
+		</Grid.RowDefinitions>
 
+		<!-- FORM -->
+		<Grid Grid.Row="0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="20*" />
+				<ColumnDefinition Width="60*" />
+				<ColumnDefinition Width="70*" />
+			</Grid.ColumnDefinitions>
+
+			<!-- Rows -->
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="40"/>
+			</Grid.RowDefinitions>
+
+			<!-- Image -->
+			<Image Source="{Binding Image}"
+			   Grid.Row="0"
+			   Grid.Column="2"
+			   Grid.RowSpan="6"
+			   Stretch="UniformToFill"/>
+
+			<!-- Name -->
+			<TextBlock Text="Name:" Grid.Column="0" Height="13"/>
+			<TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Height="15"/>
+
+			<!-- Class -->
+			<TextBlock Text="Class:" Grid.Row="1" Grid.Column="0" Height="15"/>
+			<TextBox Text="{Binding CharacterClass, UpdateSourceTrigger=PropertyChanged}"
+                 Grid.Row="1" Grid.Column="1" Height="15"/>
+
+			<!-- HP -->
+			<TextBlock Text="HP:" Grid.Row="2" Grid.Column="0" Height="15"/>
+			<TextBox Text="{Binding HP, UpdateSourceTrigger=PropertyChanged}"
+                 Grid.Row="2" Grid.Column="1" Height="15"/>
+
+			<!-- AC -->
+			<TextBlock Text="AC:" Grid.Row="3" Grid.Column="0" Height="15"/>
+			<TextBox Text="{Binding AC, UpdateSourceTrigger=PropertyChanged}"
+                 Grid.Row="3" Grid.Column="1" Height="15"/>
+
+			<!-- Initiative -->
+			<TextBlock Text="Initiative:" Grid.Row="4" Grid.Column="0" Height="15"/>
+			<TextBox Text="{Binding Initiative, UpdateSourceTrigger=PropertyChanged}"
+                 Grid.Row="4" Grid.Column="1" Height="15"/>
+
+			<!-- Speed -->
+			<TextBlock Text="Speed:" Grid.Row="5" Grid.Column="0" Height="15"/>
+			<TextBox Text="{Binding Speed, UpdateSourceTrigger=PropertyChanged}"
+                 Grid.Row="5" Grid.Column="1" Height="15"/>
+
+			<!-- Button -->
 			<Button Content="Save"
-                Command="{Binding SaveCommand}" 
-				Background="Orange"/>
-		</StackPanel>
-		<TextBlock Text="{Binding StatusMessage}"
-				   HorizontalAlignment="Center"
-				   Foreground="DarkRed"
-				   FontWeight="Heavy"
-				   VerticalAlignment="Bottom"
-				   Margin="10"/>
+                Command="{Binding SaveCommand}"
+                Background="Red"
+                Grid.Row="5"
+				Grid.Column="1"
+                Grid.ColumnSpan="2" Margin="0,59,0,0" Grid.RowSpan="2"/>
+			<Button Content="Upload Image"
+                Command="{Binding UploadImageCommand}"
+                Background="Red"
+				Grid.Column="0"
+                Grid.Row="5"
+                Grid.ColumnSpan="1" Margin="0,59,0,0" Grid.RowSpan="2"/>
+		</Grid>
+
+		<!-- STATUS MESSAGE -->
+		<TextBlock Grid.Row="1"
+               Text="{Binding StatusMessage}"
+               HorizontalAlignment="Center"
+               Foreground="Red"
+               Margin="10"/>
 	</Grid>
 </Window>
