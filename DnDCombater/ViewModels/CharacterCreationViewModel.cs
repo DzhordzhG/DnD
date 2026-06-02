@@ -14,10 +14,10 @@ namespace DnDCombater.ViewModels
 		private int? _ac;
 		private int? _initiative;
 		private int? _speed;
-		private string? _characterclass;
+		private string _characterClass;
+		private string? _subClass;
+		private int _nextId = 1;
 		private BitmapImage? _image;
-
-		private string _statusMessage = "Creating character...";
 
 		public string Name
 		{
@@ -64,12 +64,21 @@ namespace DnDCombater.ViewModels
 				OnPropertyChanged();
 			}
 		}
-		public string? CharacterClass
+		public string CharacterClass
 		{ 
-			get => _characterclass;
+			get => _characterClass;
 			set
 			{
-				_characterclass = value;
+				_characterClass = value;
+				OnPropertyChanged();
+			}
+		}
+		public string? Subclass
+		{
+			get => _subClass;
+			set
+			{
+				_subClass = value;
 				OnPropertyChanged();
 			}
 		}
@@ -79,16 +88,6 @@ namespace DnDCombater.ViewModels
 			set
 			{
 				_image = value;
-				OnPropertyChanged();
-			}
-		}
-
-		public string StatusMessage
-		{
-			get => _statusMessage;
-			set
-			{
-				_statusMessage = value;
 				OnPropertyChanged();
 			}
 		}
@@ -110,19 +109,21 @@ namespace DnDCombater.ViewModels
 
 		private void SaveCharacter()
 		{
-			if (string.IsNullOrWhiteSpace(Name) || HP == 0 || AC == 0)
+			if (string.IsNullOrWhiteSpace(Name) || HP == 0 || AC == 0 || Initiative == 0 || Speed == 0 || string.IsNullOrWhiteSpace(CharacterClass))
 			{
-				this.StatusMessage = "Please fill in all fields.";
 				return;
 			}
 			var character = new Character
 			{
+				Id = _nextId++,
 				Name = this.Name,
-				HP = this.HP ?? 0,
-				AC = this.AC ?? 0,
+				HP = this.HP ?? 10,
+				AC = this.AC ?? 10,
 				Initiative = this.Initiative ?? 0,
-				Speed = this.Speed ?? 0,
-				CharacterClass = this.CharacterClass ?? string.Empty
+				Speed = this.Speed ?? 10,
+				CharacterClass = this.CharacterClass,
+				Subclass = this.Subclass ?? "None",
+				CharacterImage = this.Image
 			};
 
 			CharacterCreated?.Invoke(character);

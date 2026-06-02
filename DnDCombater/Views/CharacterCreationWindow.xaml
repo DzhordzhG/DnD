@@ -21,7 +21,7 @@
 		</Style>
 		<Style TargetType="Button">
 			<Setter Property="FontWeight" Value="Bold"/>
-			<Setter Property="Foreground" Value="White"/>
+			<Setter Property="Foreground" Value="Black"/>
 			<Setter Property="FontFamily" Value="Georgia"/>
 			<Setter Property="HorizontalAlignment" Value="Stretch"/>
 		</Style>
@@ -35,12 +35,6 @@
 		</Style>
 	</Window.Resources>
 	<Grid Background="Black" Margin="10">
-
-		<Grid.RowDefinitions>
-			<RowDefinition Height="*" />
-			<RowDefinition Height="20" />
-		</Grid.RowDefinitions>
-
 		<!-- FORM -->
 		<Grid Grid.Row="0">
 			<Grid.ColumnDefinitions>
@@ -57,14 +51,16 @@
 				<RowDefinition Height="*"/>
 				<RowDefinition Height="*"/>
 				<RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
 				<RowDefinition Height="40"/>
 			</Grid.RowDefinitions>
 
 			<!-- Image -->
 			<Image Source="{Binding Image}"
 			   Grid.Row="0"
+			   Margin="20"
 			   Grid.Column="2"
-			   Grid.RowSpan="6"
+			   Grid.RowSpan="7"
 			   Stretch="UniformToFill"/>
 
 			<!-- Name -->
@@ -76,46 +72,44 @@
 			<TextBox Text="{Binding CharacterClass, UpdateSourceTrigger=PropertyChanged}"
                  Grid.Row="1" Grid.Column="1" Height="15"/>
 
-			<!-- HP -->
-			<TextBlock Text="HP:" Grid.Row="2" Grid.Column="0" Height="15"/>
-			<TextBox Text="{Binding HP, UpdateSourceTrigger=PropertyChanged}"
+			<!-- Subclass -->
+			<TextBlock Text="Subclass:" Grid.Row="2" Grid.Column="0" Height="15"/>
+			<TextBox Text="{Binding Subclass, UpdateSourceTrigger=PropertyChanged}"
                  Grid.Row="2" Grid.Column="1" Height="15"/>
 
-			<!-- AC -->
-			<TextBlock Text="AC:" Grid.Row="3" Grid.Column="0" Height="15"/>
-			<TextBox Text="{Binding AC, UpdateSourceTrigger=PropertyChanged}"
+			<!-- HP -->
+			<TextBlock Text="HP:" Grid.Row="3" Grid.Column="0" Height="15"/>
+			<TextBox Text="{Binding HP, UpdateSourceTrigger=PropertyChanged}"
                  Grid.Row="3" Grid.Column="1" Height="15"/>
 
-			<!-- Initiative -->
-			<TextBlock Text="Initiative:" Grid.Row="4" Grid.Column="0" Height="15"/>
-			<TextBox Text="{Binding Initiative, UpdateSourceTrigger=PropertyChanged}"
+			<!-- AC -->
+			<TextBlock Text="AC:" Grid.Row="4" Grid.Column="0" Height="15"/>
+			<TextBox Text="{Binding AC, UpdateSourceTrigger=PropertyChanged}"
                  Grid.Row="4" Grid.Column="1" Height="15"/>
 
-			<!-- Speed -->
-			<TextBlock Text="Speed:" Grid.Row="5" Grid.Column="0" Height="15"/>
-			<TextBox Text="{Binding Speed, UpdateSourceTrigger=PropertyChanged}"
+			<!-- Initiative -->
+			<TextBlock Text="Initiative:" Grid.Row="5" Grid.Column="0" Height="15"/>
+			<TextBox Text="{Binding Initiative, UpdateSourceTrigger=PropertyChanged}"
                  Grid.Row="5" Grid.Column="1" Height="15"/>
+
+			<!-- Speed -->
+			<TextBlock Text="Speed:" Grid.Row="6" Grid.Column="0" Height="15"/>
+			<TextBox Text="{Binding Speed, UpdateSourceTrigger=PropertyChanged}"
+                 Grid.Row="6" Grid.Column="1" Height="15"/>
 
 			<!-- Button -->
 			<Button Content="Save"
                 Command="{Binding SaveCommand}"
-                Background="Red"
-                Grid.Row="5"
+                Background="DarkOrange"
+                Grid.Row="7"
 				Grid.Column="1"
-                Grid.ColumnSpan="2" Margin="0,59,0,0" Grid.RowSpan="2"/>
+                Grid.ColumnSpan="2" Grid.RowSpan="2"/>
 			<Button Content="Upload Image"
                 Command="{Binding UploadImageCommand}"
-                Background="Red"
+                Background="DarkOrange"
 				Grid.Column="0"
-                Grid.Row="5"
-                Grid.ColumnSpan="1" Margin="0,59,0,0" Grid.RowSpan="2"/>
+                Grid.Row="7"
+                Grid.ColumnSpan="1" Grid.RowSpan="2"/>
 		</Grid>
-
-		<!-- STATUS MESSAGE -->
-		<TextBlock Grid.Row="1"
-               Text="{Binding StatusMessage}"
-               HorizontalAlignment="Center"
-               Foreground="Red"
-               Margin="10"/>
 	</Grid>
 </Window>

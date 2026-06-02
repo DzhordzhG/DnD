@@ -8,19 +8,54 @@
 		WindowStartupLocation="CenterScreen"
 		Icon="pack://application:,,,/Resources/D20.ico"
         Title="DnD Combater" Height="450" Width="800">
-    <Grid>
-        <TextBlock Text="{Binding Title}"
-                   FontSize="24"
+	<Grid>
+
+		<Grid.Background>
+			<ImageBrush ImageSource="/Resources/Backgrounds/flames.jpg"
+                    Stretch="UniformToFill"/>
+		</Grid.Background>
+		<Grid Grid.Row="0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="30*" />
+				<ColumnDefinition Width="60*" />
+				<ColumnDefinition Width="30*" />
+			</Grid.ColumnDefinitions>
+
+			<!-- Rows -->
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="1*"/>
+				<RowDefinition Height="2*"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="2*"/>
+			</Grid.RowDefinitions>
+			<TextBlock Text="D&amp;D Combater"
+                   FontSize="36"
+				   FontFamily="Bahnschrift"
+				   Grid.Row="2"
+				   Grid.Column="1"
+				   Foreground="DarkOrange"
+				   FontWeight="Heavy"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"/>
 
-		<Button Content="Create Character"
+			<Button Content="Create Character"
+					FontSize="15"
                     Command="{Binding OpenCharacterCreatorCommand}"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Bottom"
-				    Foreground="Green"
-				    Background="Transparent"
-                    Margin="100"/>
-
+					Grid.Row="5"
+					Grid.Column="1"/>
+			<Button Content="Show Characters"
+					FontSize="15"
+                    Command="{Binding ShowCharactersCommand}"
+					Grid.Row="4"
+					Grid.Column="1"/>
+			<Button Content="Start Combat"
+					FontSize="23"
+                    Command="{Binding StartCombatCommand}"
+					Grid.Row="3"
+					Grid.Column="1"/>
+		</Grid>
 	</Grid>
 </Window>

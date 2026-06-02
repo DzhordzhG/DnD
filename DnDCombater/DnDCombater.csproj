@@ -9,10 +9,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Backgrounds\flames.jpg" />
     <None Remove="Resources\Character Images\beholder.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Resources\Backgrounds\flames.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\Character Images\beholder.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>

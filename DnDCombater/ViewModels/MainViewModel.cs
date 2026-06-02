@@ -11,6 +11,7 @@ namespace DnDCombater.ViewModels
 		private string _title;
 		public ObservableCollection<Character> Characters { get; set; } = new ObservableCollection<Character>();
 		public ICommand OpenCharacterCreatorCommand { get; }
+		public ICommand ShowCharactersCommand { get; }
 
 		public string Title
 		{
@@ -25,8 +26,8 @@ namespace DnDCombater.ViewModels
 		public MainViewModel()
 		{
 			Title = "DnD Combater";
-
 			OpenCharacterCreatorCommand = new RelayCommand(OpenCharacterCreator);
+			ShowCharactersCommand = new RelayCommand(ShowCharacters);
 		}
 
 		private void OpenCharacterCreator()
@@ -41,6 +42,11 @@ namespace DnDCombater.ViewModels
 
 			window.ShowDialog();
 		}
-
+		private void ShowCharacters()
+		{
+			var vm = new CharacterListViewModel(Characters);
+			var window = new CharacterListView(vm);
+			window.ShowDialog();
+		}
 	}
 }
