@@ -23,5 +23,10 @@ namespace DnDCombater.Views
 			InitializeComponent();
 			DataContext = vm;
 		}
-	}
+
+		private void GridViewColumnHeader_IsMouseDirectlyOverChanged(object sender, DependencyPropertyChangedEventArgs e)
+		{
+
+        }
+    }
 }

@@ -8,78 +8,104 @@
         Title="Characters"
 		WindowStartupLocation="CenterScreen"
 		Icon="/Resources/D20.ico"
-		Background="Black"
-		Height="450" 
-		Width="800">
+		WindowState="Maximized"
+		Background="Black">
 	<Window.Resources>
 		<Style TargetType="ListView">
 			<Setter Property="FontFamily" Value="Georgia"/>
 			<Setter Property="FontSize" Value="16"/>
 			<Setter Property="FontWeight" Value="Bold"/>
 			<Setter Property="Foreground" Value="White"/>
+			<Setter Property="FontSize" Value="30"/>
 			<Setter Property="Background" Value="Black"/>
 			<Setter Property="BorderThickness" Value="0"/>
+			<Setter Property="BorderBrush" Value="DarkOrange"/>
 			<Setter Property="HorizontalAlignment" Value="Stretch"/>
 		</Style>
+
 		<Style TargetType="GridViewColumnHeader">
 			<Setter Property="Background" Value="DarkOrange"/>
 			<Setter Property="Foreground" Value="Black"/>
+			<Setter Property="IsHitTestVisible" Value="False"/>
 			<Setter Property="FontFamily" Value="Georgia"/>
 			<Setter Property="FontWeight" Value="Bold"/>
+			<Setter Property="FontSize" Value="30"/>
 			<Setter Property="HorizontalContentAlignment" Value="Center"/>
-			<Setter Property="BorderBrush" Value="Orange"/>
-			<Setter Property="BorderThickness" Value="0,0,1,1"/>
 			<Setter Property="Padding" Value="5"/>
-		</Style>
 
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="GridViewColumnHeader">
+
+						<Border Background="{TemplateBinding Background}"
+							BorderBrush="DarkOrange"
+							BorderThickness="0,0,1,1">
+
+							<ContentPresenter
+								HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+								VerticalAlignment="Center"
+								Margin="{TemplateBinding Padding}" />
+
+						</Border>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
 	</Window.Resources>
-	<Grid>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="Auto"/>
-			<RowDefinition Height="Auto"/>
-		</Grid.RowDefinitions>
-		<Grid Grid.Row="0">
-			<ListView ItemsSource="{Binding Characters}"
+	<Viewbox Stretch="Uniform">
+		<Grid Height="1080" Width="1920">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="2*"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+			<Grid Grid.Column="0">
+				<ListView ItemsSource="{Binding Characters}"
 					  SelectedItem="{Binding SelectedCharacter}">
-				<ListView.View>
-					<GridView>
-						<GridViewColumn Header="Name"
-								Width="230"
+					<ListView.View>
+						<GridView>
+							<GridViewColumn Header="Name"
 								DisplayMemberBinding="{Binding Name}" />
 
-						<GridViewColumn Header="Class" 
-								Width="160"
+							<GridViewColumn Header="Class" 
 								DisplayMemberBinding="{Binding CharacterClass}" />
 
-						<GridViewColumn Header="Subclass" 
-								Width="160"
+							<GridViewColumn Header="Subclass" 
 								DisplayMemberBinding="{Binding Subclass}" />
 
-						<GridViewColumn Header="HP" 
-								Width="50"
+							<GridViewColumn Header="HP" 
 								DisplayMemberBinding="{Binding HP}" />
 
-						<GridViewColumn Header="AC" 	
-								Width="50"
+							<GridViewColumn Header="AC" 	
 								DisplayMemberBinding="{Binding AC}" />
 
-						<GridViewColumn Header="Initiative" 
-								Width="90"
+							<GridViewColumn Header="Initiative" 
 								DisplayMemberBinding="{Binding Initiative}" />
 
-						<GridViewColumn Header="Speed" 
-								Width="60"
+							<GridViewColumn Header="Speed" 
 								DisplayMemberBinding="{Binding Speed}" />
 
-					</GridView>
-				</ListView.View>
-			</ListView>			
+						</GridView>
+					</ListView.View>
+				</ListView>
+			</Grid>
+			<Grid Grid.Column="1">
+				<Grid.RowDefinitions>
+					<RowDefinition/>
+					<RowDefinition Height="23*"/>
+				</Grid.RowDefinitions>
+				<Grid Grid.Row="0">
+					<GridViewColumnHeader
+						Content="Character"
+						Background="DarkOrange"/>
+				</Grid>
+				<Grid Grid.Row="1">
+					<Image Source="{Binding SelectedCharacterImage}"
+					   HorizontalAlignment="Center"
+					   Margin="30"
+					   VerticalAlignment="Center"
+					   Stretch="Uniform"/>
+				</Grid>
+			</Grid>
 		</Grid>
-		<Grid Grid.Row="1">
-			<Image Source="{Binding SelectedCharacterImage}"
-			   Width="350"
-			   Height="350"
-			   Stretch="UniformToFill"/>
-		</Grid>
-	</Grid>
+	</Viewbox>
 </Window>

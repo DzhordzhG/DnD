@@ -5,111 +5,118 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DnDCombater.Views"
         mc:Ignorable="d"
+		Background="Black"
 		WindowStartupLocation="CenterScreen"
 		Icon="pack://application:,,,/Resources/D20.ico"
-		ResizeMode="CanMinimize"
-	Title="Create Character" Height="450" Width="800">
+		WindowState="Maximized"
+		Title="Create Character">
 	<Window.Resources>
 		<Style TargetType="TextBlock">
 			<Setter Property="FontWeight" Value="Bold"/>
 			<Setter Property="Foreground" Value="White"/>
+			<Setter Property="FontSize" Value="24"/>
 			<Setter Property="TextAlignment" Value="Center"/>
-			<Setter Property="FontFamily" Value="Georgia"/>
-			<Setter Property="HorizontalAlignment" Value="Center"/>
-			<Setter Property="VerticalAlignment" Value="Center"/>
-			<Setter Property="Background" Value="Transparent"/>
-		</Style>
-		<Style TargetType="Button">
-			<Setter Property="FontWeight" Value="Bold"/>
-			<Setter Property="Foreground" Value="Black"/>
+			<Setter Property="Height" Value="30"/>
 			<Setter Property="FontFamily" Value="Georgia"/>
 			<Setter Property="HorizontalAlignment" Value="Stretch"/>
+			<Setter Property="VerticalAlignment" Value="Stretch"/>
+			<Setter Property="Background" Value="Transparent"/>
 		</Style>
 		<Style TargetType="TextBox">
 			<Setter Property="FontWeight" Value="DemiBold"/>
+			<Setter Property="Height" Value="40"/>
+			<Setter Property="FontSize" Value="24"/>
 			<Setter Property="Foreground" Value="Black"/>
 			<Setter Property="Background" Value="White"/>
-			<Setter Property="VerticalAlignment" Value="Center"/>
+			<Setter Property="VerticalAlignment" Value="Stretch"/>
 			<Setter Property="FontFamily" Value="Georgia"/>
 			<Setter Property="HorizontalAlignment" Value="Stretch"/>
 		</Style>
 	</Window.Resources>
-	<Grid Background="Black" Margin="10">
-		<!-- FORM -->
-		<Grid Grid.Row="0">
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="20*" />
-				<ColumnDefinition Width="60*" />
-				<ColumnDefinition Width="70*" />
-			</Grid.ColumnDefinitions>
+	<Viewbox Stretch="Uniform">
+		<Grid Background="Black" Margin="10" Height="1080" Width="1920">
+			<!-- FORM -->
+			<Grid Grid.Row="0">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="20*" />
+					<ColumnDefinition Width="60*" />
+					<ColumnDefinition Width="70*" />
+				</Grid.ColumnDefinitions>
 
-			<!-- Rows -->
-			<Grid.RowDefinitions>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="40"/>
-			</Grid.RowDefinitions>
+				<!-- Rows -->
+				<Grid.RowDefinitions>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="40"/>
+				</Grid.RowDefinitions>
 
-			<!-- Image -->
-			<Image Source="{Binding Image}"
+				<!-- Image -->
+				<Image Source="{Binding Image}"
 			   Grid.Row="0"
 			   Margin="20"
 			   Grid.Column="2"
 			   Grid.RowSpan="7"
-			   Stretch="UniformToFill"/>
+			   Stretch="Uniform"/>
 
-			<!-- Name -->
-			<TextBlock Text="Name:" Grid.Column="0" Height="13"/>
-			<TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Height="15"/>
+				<!-- Name -->
+				<TextBlock Text="Name:" Grid.Column="0"/>
+				<TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1"/>
 
-			<!-- Class -->
-			<TextBlock Text="Class:" Grid.Row="1" Grid.Column="0" Height="15"/>
-			<TextBox Text="{Binding CharacterClass, UpdateSourceTrigger=PropertyChanged}"
-                 Grid.Row="1" Grid.Column="1" Height="15"/>
+				<!-- Class -->
+				<TextBlock Text="Class:" Grid.Row="1" Grid.Column="0"/>
+				<TextBox Text="{Binding CharacterClass, UpdateSourceTrigger=PropertyChanged}"
+                 Grid.Row="1" Grid.Column="1"/>
 
-			<!-- Subclass -->
-			<TextBlock Text="Subclass:" Grid.Row="2" Grid.Column="0" Height="15"/>
-			<TextBox Text="{Binding Subclass, UpdateSourceTrigger=PropertyChanged}"
-                 Grid.Row="2" Grid.Column="1" Height="15"/>
+				<!-- Subclass -->
+				<TextBlock Text="Subclass:" Grid.Row="2" Grid.Column="0"/>
+				<TextBox Text="{Binding Subclass, UpdateSourceTrigger=PropertyChanged}"
+                 Grid.Row="2" Grid.Column="1"/>
 
-			<!-- HP -->
-			<TextBlock Text="HP:" Grid.Row="3" Grid.Column="0" Height="15"/>
-			<TextBox Text="{Binding HP, UpdateSourceTrigger=PropertyChanged}"
-                 Grid.Row="3" Grid.Column="1" Height="15"/>
+				<!-- HP -->
+				<TextBlock Text="HP:" Grid.Row="3" Grid.Column="0"/>
+				<TextBox Text="{Binding HP, UpdateSourceTrigger=PropertyChanged}"
+                 Grid.Row="3" Grid.Column="1"/>
 
-			<!-- AC -->
-			<TextBlock Text="AC:" Grid.Row="4" Grid.Column="0" Height="15"/>
-			<TextBox Text="{Binding AC, UpdateSourceTrigger=PropertyChanged}"
-                 Grid.Row="4" Grid.Column="1" Height="15"/>
+				<!-- AC -->
+				<TextBlock Text="AC:" Grid.Row="4" Grid.Column="0"/>
+				<TextBox Text="{Binding AC, UpdateSourceTrigger=PropertyChanged}"
+                 Grid.Row="4" Grid.Column="1"/>
 
-			<!-- Initiative -->
-			<TextBlock Text="Initiative:" Grid.Row="5" Grid.Column="0" Height="15"/>
-			<TextBox Text="{Binding Initiative, UpdateSourceTrigger=PropertyChanged}"
-                 Grid.Row="5" Grid.Column="1" Height="15"/>
+				<!-- Initiative -->
+				<TextBlock Text="Initiative:" Grid.Row="5" Grid.Column="0"/>
+				<TextBox Text="{Binding Initiative, UpdateSourceTrigger=PropertyChanged}"
+                 Grid.Row="5" Grid.Column="1"/>
 
-			<!-- Speed -->
-			<TextBlock Text="Speed:" Grid.Row="6" Grid.Column="0" Height="15"/>
-			<TextBox Text="{Binding Speed, UpdateSourceTrigger=PropertyChanged}"
-                 Grid.Row="6" Grid.Column="1" Height="15"/>
+				<!-- Speed -->
+				<TextBlock Text="Speed:" Grid.Row="6" Grid.Column="0"/>
+				<TextBox Text="{Binding Speed, UpdateSourceTrigger=PropertyChanged}"
+                 Grid.Row="6" Grid.Column="1"/>
 
-			<!-- Button -->
-			<Button Content="Save"
+				<!-- Button -->
+				<Button Content="Save"
                 Command="{Binding SaveCommand}"
-                Background="DarkOrange"
+                HorizontalAlignment="Stretch"
+				VerticalAlignment="Stretch"
+				FontSize="24"
                 Grid.Row="7"
-				Grid.Column="1"
-                Grid.ColumnSpan="2" Grid.RowSpan="2"/>
-			<Button Content="Upload Image"
+				Grid.Column="2"
+                Grid.ColumnSpan="1" Grid.RowSpan="1"/>
+
+				<Button Content="Upload Image"
                 Command="{Binding UploadImageCommand}"
                 Background="DarkOrange"
+				FontSize="24"
+				HorizontalAlignment="Stretch"
+				VerticalAlignment="Stretch"
 				Grid.Column="0"
                 Grid.Row="7"
-                Grid.ColumnSpan="1" Grid.RowSpan="2"/>
+                Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+			</Grid>
 		</Grid>
-	</Grid>
+	</Viewbox>
 </Window>
