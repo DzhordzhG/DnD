@@ -10,65 +10,22 @@
 		WindowStartupLocation="CenterScreen"
 		Icon="pack://application:,,,/Resources/D20.ico"
         Title="DnD Combater">
-	<Viewbox Stretch="Uniform">
-		<Grid Height="1080" Width="1920">
-			<Grid.Background>
-				<ImageBrush ImageSource="/Resources/Backgrounds/flames.jpg"
-                    Stretch="UniformToFill"/>
-			</Grid.Background>
-			<Grid Grid.Row="0">
-				<Grid.ColumnDefinitions>
-					<ColumnDefinition Width="30*" />
-					<ColumnDefinition Width="60*" />
-					<ColumnDefinition Width="30*" />
-				</Grid.ColumnDefinitions>
 
-				<!-- Rows -->
-				<Grid.RowDefinitions>
-					<RowDefinition Height="*"/>
-					<RowDefinition Height="1*"/>
-					<RowDefinition Height="2*"/>
-					<RowDefinition Height="*"/>
-					<RowDefinition Height="*"/>
-					<RowDefinition Height="*"/>
-					<RowDefinition Height="2*"/>
-				</Grid.RowDefinitions>
-				<TextBlock Text="D&amp;D Combater"
-                   FontSize="100"
-				   FontFamily="Georgia"
-				   Grid.Row="2"
-				   Grid.Column="1"
-				   Foreground="DarkOrange"
-				   FontWeight="Heavy"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"/>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
 
-				<Button 
-					Content="Create Character"
-					FontSize="30"
-                    Command="{Binding OpenCharacterCreatorCommand}"
-					Width="300"
-					Height="50"
-					FontWeight="Normal"
-					Grid.Row="5"
-					Grid.Column="1"/>
-				<Button Content="Show Characters"
-					FontSize="30"
-                    Command="{Binding ShowCharactersCommand}"
-					FontWeight="Normal"
-					Width="300"
-					Height="50"
-					Grid.Row="4"
-					Grid.Column="1"/>
-				<Button Content="Start Combat"
-					FontSize="40"
-					FontWeight="SemiBold"
-                    Command="{Binding StartCombatCommand}"
-					Width="400"
-					Height="70"
-					Grid.Row="3"
-					Grid.Column="1"/>
-			</Grid>
-		</Grid>
-	</Viewbox>
+		<Button Content="← Back"
+				Grid.Row="0"
+				Width="120"
+				Height="40"
+				HorizontalAlignment="Left"
+				Margin="10"
+				Click="Back_Click"/>
+
+		<ContentControl x:Name="MainContent"
+                    Grid.Row="1"/>
+	</Grid>
 </Window>

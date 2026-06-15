@@ -2,6 +2,7 @@
 using DnDCombater.Models;
 using DnDCombater.Views;
 using System.Collections.ObjectModel;
+using System.Windows;
 using System.Windows.Input;
 
 namespace DnDCombater.ViewModels
@@ -33,20 +34,12 @@ namespace DnDCombater.ViewModels
 		private void OpenCharacterCreator()
 		{
 			var vm = new CharacterCreationViewModel();
-			var window = new CharacterCreationWindow(vm);
-
-			vm.CharacterCreated += character =>
-			{
-				Characters.Add(character);
-			};
-
-			window.ShowDialog();
+			NavigationService.Navigate(new CharacterCreationView(vm));
 		}
 		private void ShowCharacters()
 		{
 			var vm = new CharacterListViewModel(Characters);
-			var window = new CharacterListView(vm);
-			window.ShowDialog();
+			NavigationService.Navigate(new CharacterListView(vm));
 		}
 	}
 }

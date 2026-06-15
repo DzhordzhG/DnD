@@ -1,4 +1,5 @@
 ﻿using DnDCombater.ViewModels;
+using DnDCombater.Views;
 using System.Windows;
 
 namespace DnDCombater
@@ -8,7 +9,14 @@ namespace DnDCombater
 		public MainWindow()
 		{
 			InitializeComponent();
-			DataContext = new MainViewModel();
+			MainContent.Content = new MainMenu();
+
+			NavigationService.MainContentControl = MainContent;
+			NavigationService.Navigate(new MainMenu());
+		}
+		private void Back_Click(object sender, RoutedEventArgs e)
+		{
+			NavigationService.GoBack();
 		}
 	}
 }

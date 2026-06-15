@@ -9,19 +9,20 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace DnDCombater.Views
 {
-	/// <summary>
-	/// Interaction logic for CharacterListView.xaml
-	/// </summary>
-	public partial class CharacterListView : UserControl
-	{
-		public CharacterListView(CharacterListViewModel vm)
-		{
-			InitializeComponent();
-			DataContext = vm;
+    /// <summary>
+    /// Interaction logic for MainMenu.xaml
+    /// </summary>
+    public partial class MainMenu : UserControl
+    {
+        public MainMenu()
+        {
+            InitializeComponent();
+            DataContext = new MainViewModel();
 		}
     }
 }

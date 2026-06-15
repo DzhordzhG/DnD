@@ -1,16 +1,12 @@
-﻿<Window x:Class="DnDCombater.Views.CharacterCreationWindow"
+﻿<UserControl x:Class="DnDCombater.Views.CharacterCreationView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DnDCombater.Views"
         mc:Ignorable="d"
-		Background="Black"
-		WindowStartupLocation="CenterScreen"
-		Icon="pack://application:,,,/Resources/D20.ico"
-		WindowState="Maximized"
-		Title="Create Character">
-	<Window.Resources>
+		Background="Black">
+	<UserControl.Resources>
 		<Style TargetType="TextBlock">
 			<Setter Property="FontWeight" Value="Bold"/>
 			<Setter Property="Foreground" Value="White"/>
@@ -32,8 +28,8 @@
 			<Setter Property="FontFamily" Value="Georgia"/>
 			<Setter Property="HorizontalAlignment" Value="Stretch"/>
 		</Style>
-	</Window.Resources>
-	<Viewbox Stretch="Uniform">
+	</UserControl.Resources>
+	<Viewbox Stretch="Fill">
 		<Grid Background="Black" Margin="10" Height="1080" Width="1920">
 			<!-- FORM -->
 			<Grid Grid.Row="0">
@@ -57,11 +53,11 @@
 
 				<!-- Image -->
 				<Image Source="{Binding Image}"
-			   Grid.Row="0"
-			   Margin="20"
-			   Grid.Column="2"
-			   Grid.RowSpan="7"
-			   Stretch="Uniform"/>
+				   Grid.Row="0"
+				   Margin="20"
+				   Grid.Column="2"
+				   Grid.RowSpan="7"
+				   Stretch="Uniform"/>
 
 				<!-- Name -->
 				<TextBlock Text="Name:" Grid.Column="0"/>
@@ -119,4 +115,4 @@
 			</Grid>
 		</Grid>
 	</Viewbox>
-</Window>
+</UserControl>

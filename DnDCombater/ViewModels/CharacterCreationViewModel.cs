@@ -1,9 +1,6 @@
 ﻿using DnDCombater.Commands;
 using DnDCombater.Models;
 using Microsoft.Win32;
-using System.Drawing;
-using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
 
@@ -96,6 +93,7 @@ namespace DnDCombater.ViewModels
 
 		public ICommand SaveCommand { get; }
 		public ICommand UploadImageCommand { get; }
+		public ICommand GoBackCommand { get; }
 
 		public event Action<Character> CharacterCreated;
 
@@ -104,7 +102,7 @@ namespace DnDCombater.ViewModels
 			SaveCommand = new RelayCommand(SaveCharacter);
 			UploadImageCommand = new RelayCommand(UploadImage);
 			Image = new BitmapImage(new Uri(
-				"pack://application:,,,/Resources/Character Images/morgan.png",
+				"pack://application:,,,/Resources/Character Images/beholder.png",
 				UriKind.Absolute));
 
 		}
@@ -143,7 +141,6 @@ namespace DnDCombater.ViewModels
 			{
 				Image = new BitmapImage(new Uri(dialog.FileName));
 			}
-
 		}
 	}
 }
