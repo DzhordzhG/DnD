@@ -20,7 +20,7 @@
 		</Style>
 
 		<Style TargetType="GridViewColumnHeader">
-			<Setter Property="Background" Value="DarkOrange"/>
+			<Setter Property="Background" Value="GreenYellow"/>
 			<Setter Property="Foreground" Value="Black"/>
 			<Setter Property="IsHitTestVisible" Value="False"/>
 			<Setter Property="FontFamily" Value="Georgia"/>
@@ -34,7 +34,7 @@
 					<ControlTemplate TargetType="GridViewColumnHeader">
 
 						<Border Background="{TemplateBinding Background}"
-							BorderBrush="DarkOrange"
+							BorderBrush="Green"
 							BorderThickness="0,0,1,1">
 
 							<ContentPresenter
@@ -92,8 +92,7 @@
 				</Grid.RowDefinitions>
 				<Grid Grid.Row="0">
 					<GridViewColumnHeader
-						Content="Character"
-						Background="DarkOrange"/>
+						Content="Character"/>
 				</Grid>
 				<Grid Grid.Row="1">
 					<Image Source="{Binding SelectedCharacterImage}"

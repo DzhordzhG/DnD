@@ -105,7 +105,6 @@
 
 				<Button Content="Upload Image"
                 Command="{Binding UploadImageCommand}"
-                Background="DarkOrange"
 				FontSize="24"
 				HorizontalAlignment="Stretch"
 				VerticalAlignment="Stretch"

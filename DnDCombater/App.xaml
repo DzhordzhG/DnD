@@ -19,7 +19,7 @@
 
 						<ControlTemplate.Triggers>
 							<Trigger Property="IsMouseOver" Value="True">
-								<Setter Property="Background" Value="Red"/>
+								<Setter Property="Background" Value="LightGreen"/>
 							</Trigger>
 						</ControlTemplate.Triggers>
 
@@ -35,7 +35,7 @@
 			<Setter Property="FontFamily" Value="Georgia"/>
 			<Setter Property="FontWeight" Value="Bold"/>
 			<Setter Property="Foreground" Value="Black"/>
-			<Setter Property="Background" Value="DarkOrange"/>
+			<Setter Property="Background" Value="YellowGreen"/>
 		</Style>
 
 	</Application.Resources>

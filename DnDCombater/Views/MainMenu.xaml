@@ -10,7 +10,7 @@
 		<Viewbox Stretch="Fill">
 			<Grid Height="1080" Width="1920">
 				<Grid.Background>
-					<ImageBrush ImageSource="/Resources/Backgrounds/flames.jpg"
+					<ImageBrush ImageSource="/Resources/Backgrounds/filth.jpg"
                     Stretch="Fill"/>
 				</Grid.Background>
 				<Grid Grid.Row="0">
@@ -35,7 +35,7 @@
 				   FontFamily="Georgia"
 				   Grid.Row="2"
 				   Grid.Column="1"
-				   Foreground="DarkOrange"
+				   Foreground="GreenYellow"
 				   FontWeight="Heavy"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"/>
