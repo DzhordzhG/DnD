@@ -88,6 +88,7 @@
 				<Grid.RowDefinitions>
 					<RowDefinition/>
 					<RowDefinition Height="23*"/>
+					<RowDefinition Height="1*"/>
 				</Grid.RowDefinitions>
 				<Grid Grid.Row="0">
 					<GridViewColumnHeader
@@ -99,7 +100,16 @@
 					   HorizontalAlignment="Center"
 					   Margin="30"
 					   VerticalAlignment="Center"
-					   Stretch="Uniform"/>
+					   Stretch="Fill"/>
+				</Grid>
+				<Grid Grid.Row="2">
+					<Button
+
+						HorizontalAlignment="Stretch"
+						VerticalAlignment="Stretch"
+						Content="Delete Character"
+						FontSize="30"
+						Command="{Binding DeleteCharacterCommand}"/>
 				</Grid>
 			</Grid>
 		</Grid>

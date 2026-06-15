@@ -1,6 +1,4 @@
-﻿using System.Windows.Media.Imaging;
-
-namespace DnDCombater.Models
+﻿namespace DnDCombater.Models
 {
 	public class Character
 	{
@@ -19,6 +17,6 @@ namespace DnDCombater.Models
 
 		public int Speed { get; set; }
 
-		public BitmapImage? CharacterImage { get; set; }
+		public byte[]? CharacterImage { get; set; }
 	}
 }

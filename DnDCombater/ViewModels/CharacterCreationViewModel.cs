@@ -1,5 +1,7 @@
-﻿using DnDCombater.Commands;
+﻿using DndCombater.Data;
+using DnDCombater.Commands;
 using DnDCombater.Models;
+using DnDCombater.Registries;
 using Microsoft.Win32;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
@@ -15,8 +17,8 @@ namespace DnDCombater.ViewModels
 		private int? _speed;
 		private string _characterClass;
 		private string? _subClass;
-		private int _nextId = 1;
-		private BitmapImage? _image;
+		private int _nextId;
+		private BitmapImage _image;
 
 		public string Name
 		{
@@ -90,7 +92,6 @@ namespace DnDCombater.ViewModels
 				OnPropertyChanged();
 			}
 		}
-
 		public ICommand SaveCommand { get; }
 		public ICommand UploadImageCommand { get; }
 		public ICommand GoBackCommand { get; }
@@ -109,6 +110,18 @@ namespace DnDCombater.ViewModels
 
 		private void SaveCharacter()
 		{
+			using var db = new ApplicationDbContext();
+
+			try
+			{
+				_nextId = db.Characters.OrderByDescending(c => c.Id).Select(c => c.Id).First() + 1;
+			}
+			catch
+			{
+				_nextId = 1;
+			}
+			
+
 			if (string.IsNullOrWhiteSpace(Name) || HP == 0 || AC == 0 || Initiative == 0 || Speed == 0 || string.IsNullOrWhiteSpace(CharacterClass))
 			{
 				return;
@@ -123,8 +136,11 @@ namespace DnDCombater.ViewModels
 				Speed = this.Speed ?? 10,
 				CharacterClass = this.CharacterClass,
 				Subclass = this.Subclass ?? "None",
-				CharacterImage = this.Image
+				CharacterImage = Converter.ConvertToBytes(Image)
 			};
+
+			db.Characters.Add(character);
+			db.SaveChanges();
 
 			CharacterCreated?.Invoke(character);
 		}

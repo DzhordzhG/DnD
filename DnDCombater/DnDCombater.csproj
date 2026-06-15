@@ -36,4 +36,9 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.9" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DnDCombater.Core\DnDCombater.Core.csproj" />
+    <ProjectReference Include="..\DndCombater.Data\DndCombater.Data.csproj" />
+  </ItemGroup>
+
 </Project>

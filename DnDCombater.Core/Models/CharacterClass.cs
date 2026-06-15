@@ -6,13 +6,15 @@ namespace DnDCombater.Models
 {
 	public class CharacterClass
 	{
+		public int Id { get; set; }
+
 		public int ClassName { get; set; }
 
 		public string? Description { get; set; }
 
 		public string HitDice { get; set; }
 
-		public (string, string) SavingThrowProficiencies { get; set; }
+		public string[] SavingThrowProficiencies { get; set; }
 
 		public string[] WeaponProficiencies { get; set; }
 
@@ -21,7 +23,5 @@ namespace DnDCombater.Models
 		public string[] ToolProficiencies { get; set; }
 
 		public string[] SkillProficiencies { get; set; }
-
-
 	}
 }

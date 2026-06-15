@@ -1,6 +1,5 @@
-﻿using DnDCombater.Models;
+﻿using DndCombater.Data;
 using DnDCombater.ViewModels;
-using System.Windows;
 using System.Windows.Controls;
 
 namespace DnDCombater.Views
@@ -14,6 +13,7 @@ namespace DnDCombater.Views
 		{
 			InitializeComponent();
 			DataContext = ccvm;
+			using var db = new ApplicationDbContext();
 
 			ccvm.CharacterCreated += (character) =>
 			{

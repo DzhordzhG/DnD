@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="../DnDCombater.Core/DnDCombater.Core.csproj" Id="e06a531c-63d8-4d49-8eb7-dd4cca24e4c5" />
   <Project Path="../DndCombater.Data/DndCombater.Data.csproj" Id="88a0e25d-6f8a-4eb0-ae2a-e0681e6300e1" />
   <Project Path="DnDCombater.csproj" />
 </Solution>

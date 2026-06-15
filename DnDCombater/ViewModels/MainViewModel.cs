@@ -1,8 +1,6 @@
-﻿using DnDCombater.Commands;
-using DnDCombater.Models;
+﻿using DndCombater.Data;
+using DnDCombater.Commands;
 using DnDCombater.Views;
-using System.Collections.ObjectModel;
-using System.Windows;
 using System.Windows.Input;
 
 namespace DnDCombater.ViewModels
@@ -10,7 +8,6 @@ namespace DnDCombater.ViewModels
 	public class MainViewModel : BaseViewModel
 	{
 		private string _title;
-		public ObservableCollection<Character> Characters { get; set; } = new ObservableCollection<Character>();
 		public ICommand OpenCharacterCreatorCommand { get; }
 		public ICommand ShowCharactersCommand { get; }
 
@@ -38,7 +35,7 @@ namespace DnDCombater.ViewModels
 		}
 		private void ShowCharacters()
 		{
-			var vm = new CharacterListViewModel(Characters);
+			var vm = new CharacterListViewModel();
 			NavigationService.Navigate(new CharacterListView(vm));
 		}
 	}
