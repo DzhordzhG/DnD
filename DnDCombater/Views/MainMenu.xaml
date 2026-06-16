@@ -24,38 +24,65 @@
 						<RowDefinition Height="*"/>
 						<RowDefinition Height="*"/>
 						<RowDefinition Height="*"/>
-						<RowDefinition Height="2*"/>
+						<RowDefinition Height="*"/>
+						<RowDefinition Height="*"/>
 					</Grid.RowDefinitions>
 					<TextBlock Text="D&amp;D Combater"
                    FontSize="130"
 				   Grid.Row="2"
 				   Grid.Column="1"
 				   Foreground="CornflowerBlue"
-				   FontWeight="Bold"
+				   FontWeight="Heavy"
 				   FontFamily="resources\fonts\#Cinzel"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"/>
 
+					<Button 
+					Content="Add Battlemap"
+					FontSize="30"
+                    Command="{Binding AddBattleMapCommand}"
+					Width="320"
+						VerticalAlignment="Top"
+					Height="50"
+					FontWeight="Bold"
+					Grid.Row="7"
+					Grid.Column="1"/>
+					
+					<Button Content="Show Battlemaps"
+					FontSize="30"
+                    Command="{Binding ShowBattlemapsCommand}"
+					FontWeight="Bold"
+					Width="320"
+							VerticalAlignment="Top"
+					Height="50"
+					Grid.Row="6"
+					Grid.Column="1"/>
+					
 					<Button 
 					Content="Create Character"
 					FontSize="30"
                     Command="{Binding OpenCharacterCreatorCommand}"
 					Width="320"
 					Height="50"
+						VerticalAlignment="Top"
 					FontWeight="Bold"
 					Grid.Row="5"
 					Grid.Column="1"/>
+					
 					<Button Content="Show Characters"
 					FontSize="30"
                     Command="{Binding ShowCharactersCommand}"
 					FontWeight="Bold"
 					Width="320"
 					Height="50"
+							VerticalAlignment="Top"
 					Grid.Row="4"
 					Grid.Column="1"/>
+					
 					<Button Content="Start Combat"
 					FontSize="40"
 					FontWeight="SemiBold"
+							VerticalAlignment="Top"
                     Command="{Binding StartCombatCommand}"
 					Width="400"
 					Height="70"
