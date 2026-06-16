@@ -8,10 +8,9 @@
 		Background="Black">
 	<UserControl.Resources>
 		<Style TargetType="ListView">
-			<Setter Property="FontFamily" Value="Georgia"/>
+			<Setter Property="FontFamily" Value="resources\fonts\#Cinzel"/>
 			<Setter Property="FontSize" Value="16"/>
-			<Setter Property="FontWeight" Value="Bold"/>
-			<Setter Property="Foreground" Value="White"/>
+			<Setter Property="Foreground" Value="CornflowerBlue"/>
 			<Setter Property="FontSize" Value="30"/>
 			<Setter Property="Background" Value="Black"/>
 			<Setter Property="BorderThickness" Value="0"/>
@@ -20,10 +19,10 @@
 		</Style>
 
 		<Style TargetType="GridViewColumnHeader">
-			<Setter Property="Background" Value="GreenYellow"/>
+			<Setter Property="Background" Value="LightSlateGray"/>
 			<Setter Property="Foreground" Value="Black"/>
 			<Setter Property="IsHitTestVisible" Value="False"/>
-			<Setter Property="FontFamily" Value="Georgia"/>
+			<Setter Property="FontFamily" Value="resources\fonts\#Cinzel"/>
 			<Setter Property="FontWeight" Value="Bold"/>
 			<Setter Property="FontSize" Value="30"/>
 			<Setter Property="HorizontalContentAlignment" Value="Center"/>
@@ -34,7 +33,7 @@
 					<ControlTemplate TargetType="GridViewColumnHeader">
 
 						<Border Background="{TemplateBinding Background}"
-							BorderBrush="Green"
+							BorderBrush="LightSlateGray"
 							BorderThickness="0,0,1,1">
 
 							<ContentPresenter
@@ -56,7 +55,7 @@
 			</Grid.ColumnDefinitions>
 			<Grid Grid.Column="0">
 				<ListView ItemsSource="{Binding Characters}"
-					  SelectedItem="{Binding SelectedCharacter}">
+					  SelectedItem="{Binding SelectedCharacter}" Margin="0,0,0,10">
 					<ListView.View>
 						<GridView>
 							<GridViewColumn Header="Name"
@@ -92,6 +91,7 @@
 				</Grid.RowDefinitions>
 				<Grid Grid.Row="0">
 					<GridViewColumnHeader
+						FontSize="30"
 						Content="Character"/>
 				</Grid>
 				<Grid Grid.Row="1">
@@ -108,7 +108,7 @@
 						VerticalAlignment="Stretch"
 						Content="Delete Character"
 						FontSize="30"
-						Command="{Binding DeleteCharacterCommand}"/>
+						Command="{Binding DeleteCharacterCommand}" Margin="-7,0,0,0"/>
 				</Grid>
 			</Grid>
 		</Grid>

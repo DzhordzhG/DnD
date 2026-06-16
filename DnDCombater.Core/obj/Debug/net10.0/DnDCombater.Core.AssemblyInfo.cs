@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DnDCombater.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b0e4e47259fb4a068a0ca258049e389534aad679")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e7bd2145772d27ddaa4b4c05acf0b4ad6a29e7ae")]
 [assembly: System.Reflection.AssemblyProductAttribute("DnDCombater.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DnDCombater.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

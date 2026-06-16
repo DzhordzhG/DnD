@@ -9,6 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove=".gitignore" />
+    <None Remove="Resources\Backgrounds\blackbg.jpg" />
     <None Remove="Resources\Backgrounds\filth.jpg" />
     <None Remove="Resources\Backgrounds\flames.jpg" />
     <None Remove="Resources\Character Images\beholder.png" />
@@ -16,6 +18,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Resources\Backgrounds\blackbg.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\Backgrounds\filth.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -33,6 +38,9 @@
     </Resource>
     <Resource Include="Resources\D20.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Fonts\Cinzel.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
 

@@ -9,10 +9,6 @@
     <Grid>
 		<Viewbox Stretch="Fill">
 			<Grid Height="1080" Width="1920">
-				<Grid.Background>
-					<ImageBrush ImageSource="/Resources/Backgrounds/filth.jpg"
-                    Stretch="Fill"/>
-				</Grid.Background>
 				<Grid Grid.Row="0">
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="30*" />
@@ -31,12 +27,12 @@
 						<RowDefinition Height="2*"/>
 					</Grid.RowDefinitions>
 					<TextBlock Text="D&amp;D Combater"
-                   FontSize="100"
-				   FontFamily="Georgia"
+                   FontSize="130"
 				   Grid.Row="2"
 				   Grid.Column="1"
-				   Foreground="GreenYellow"
-				   FontWeight="Heavy"
+				   Foreground="CornflowerBlue"
+				   FontWeight="Bold"
+				   FontFamily="resources\fonts\#Cinzel"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"/>
 
@@ -44,16 +40,16 @@
 					Content="Create Character"
 					FontSize="30"
                     Command="{Binding OpenCharacterCreatorCommand}"
-					Width="300"
+					Width="320"
 					Height="50"
-					FontWeight="Normal"
+					FontWeight="Bold"
 					Grid.Row="5"
 					Grid.Column="1"/>
 					<Button Content="Show Characters"
 					FontSize="30"
                     Command="{Binding ShowCharactersCommand}"
-					FontWeight="Normal"
-					Width="300"
+					FontWeight="Bold"
+					Width="320"
 					Height="50"
 					Grid.Row="4"
 					Grid.Column="1"/>
