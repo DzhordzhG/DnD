@@ -1,0 +1,6 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/DnDCombater.Core/obj/Debug/net10.0/DnDCombater.Core.AssemblyInfo.cs
+/DnDCombater.Core/obj/Debug/net10.0/DnDCombater.Core.AssemblyInfoInputs.cache
