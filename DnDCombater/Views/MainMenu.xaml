@@ -34,13 +34,14 @@
 
 					<!-- DnD Combater -->
 					<TextBlock Text="D&amp;D Combater"
-						   FontSize="130"
-						   Grid.Row="1"
-						   Grid.Column="1"
-						   Foreground="CornflowerBlue"
-						   FontWeight="Heavy"
-						   FontFamily="resources\fonts\#Cinzel"
-						   HorizontalAlignment="Center"
+								FontSize="130"
+								Grid.Row="1"
+								Grid.Column="0"
+								Foreground="CornflowerBlue"
+								FontWeight="Heavy"
+								FontFamily="/Resources/Fonts/#MedievalSharp"
+							   Grid.ColumnSpan="3"
+								HorizontalAlignment="Center"
 						   VerticalAlignment="Center"/>
 
 					<!-- Add Battlemap Button -->
@@ -89,12 +90,12 @@
 					</Button>
 
 					<!-- Decorative Swords -->
-					<Image Source="/resources/misc/sword.png" Height="149" Margin="270,238,789,0" VerticalAlignment="Top" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="3">
+					<Image Source="/resources/misc/sword.png" Height="149" Margin="-260,500,0,0" VerticalAlignment="Top" Grid.Column="2" Grid.RowSpan="3">
 						<Image.RenderTransform>
 							<RotateTransform Angle="270" />
 						</Image.RenderTransform>
 					</Image>
-					<Image Source="/resources/misc/sword.png" Height="149" Margin="129,222,44,0" VerticalAlignment="Top" Grid.Column="2" Grid.RowSpan="2">
+					<Image Source="/Resources/Misc/sword.png" Height="149" Margin="-620,230,0,0" VerticalAlignment="Top" Grid.Column="1" Grid.RowSpan="3">
 						<Image.RenderTransform>
 							<RotateTransform Angle="90" />
 						</Image.RenderTransform>

@@ -23,6 +23,11 @@ namespace DnDCombater.Views
         {
             InitializeComponent();
 			DataContext = vm;
+
+			vm.BattlemapCreated += (battlemap) =>
+			{
+				NavigationService.Navigate(new MainMenu());
+			};
 		}
     }
 }

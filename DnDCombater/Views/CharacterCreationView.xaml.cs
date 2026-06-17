@@ -9,13 +9,12 @@ namespace DnDCombater.Views
 	/// </summary>
 	public partial class CharacterCreationView : UserControl
 	{
-		public CharacterCreationView(CharacterCreationViewModel ccvm)
+		public CharacterCreationView(CharacterCreationViewModel vm)
 		{
 			InitializeComponent();
-			DataContext = ccvm;
-			using var db = new ApplicationDbContext();
+			DataContext = vm;
 
-			ccvm.CharacterCreated += (character) =>
+			vm.CharacterCreated += (character) =>
 			{
 				NavigationService.Navigate(new MainMenu());
 			};

@@ -6,7 +6,125 @@
              xmlns:local="clr-namespace:DnDCombater.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+	<UserControl.Resources>
+		<Style TargetType="TextBlock">
+			<Setter Property="Foreground" Value="White"/>
+			<Setter Property="FontSize" Value="30"/>
+			<Setter Property="TextAlignment" Value="Center"/>
+			<Setter Property="Height" Value="30"/>
+			<Setter Property="FontFamily" Value="/Resources/Fonts/#Cinzel"/>
+			<Setter Property="HorizontalAlignment" Value="Center"/>
+			<Setter Property="VerticalAlignment" Value="Center"/>
+			<Setter Property="Background" Value="Transparent"/>
+		</Style>
+		<Style TargetType="RadioButton">
+			<Setter Property="Foreground" Value="White"/>
+			<Setter Property="FontSize" Value="30"/>
+			<Setter Property="Height" Value="30"/>
+			<Setter Property="FontFamily" Value="/Resources/Fonts/#Cinzel"/>
+			<Setter Property="HorizontalAlignment" Value="Center"/>
+			<Setter Property="BorderBrush" Value="White"/>
+			<Setter Property="VerticalContentAlignment" Value="Center"/>
+		</Style>
+		<Style TargetType="ComboBox">
+			<Setter Property="FontSize" Value="30"/>
+			<Setter Property="FontFamily" Value="/Resources/Fonts/#Cinzel"/>
+			<Setter Property="HorizontalAlignment" Value="Stretch"/>
+			<Setter Property="HorizontalContentAlignment" Value="Center"/>
+			<Setter Property="BorderBrush" Value="White"/>
+			<Setter Property="VerticalAlignment" Value="Center"/>
+		</Style>
+		<Style TargetType="ComboBoxItem">
+			<Setter Property="FontSize" Value="30"/>
+			<Setter Property="FontFamily" Value="/Resources/Fonts/#Cinzel"/>
+			<Setter Property="HorizontalAlignment" Value="Center"/>
+			<Setter Property="BorderBrush" Value="White"/>
+			<Setter Property="VerticalAlignment" Value="Center"/>
+		</Style>
+	</UserControl.Resources>
+	<Grid>
+		<Viewbox Stretch="Fill">
+			<Grid Height="1080" Width="1920">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="20*" />
+					<ColumnDefinition Width="30*" />
+					<ColumnDefinition Width="60*" />
+				</Grid.ColumnDefinitions>
 
+				<TextBlock Text="Battlemap Creator" FontSize="80" Height="100" HorizontalAlignment="Left" Margin="15,120,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" FontWeight="Bold" Foreground="CornflowerBlue"/>
+
+				<!-- Properties -->
+				<Grid Grid.Column="0">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="2*"/>
+						<RowDefinition Height="*"/>
+						<RowDefinition Height="*"/>
+						<RowDefinition Height="*"/>
+						<RowDefinition Height="*"/>
+						<RowDefinition Height="2*"/>
+					</Grid.RowDefinitions>
+
+					<TextBlock Grid.Row="1" Text="Battlemap Name"/>
+					<TextBlock Grid.Row="2" Text="Size"/>
+					<TextBlock Grid.Row="3" Text="Image"/>
+					<TextBlock Grid.Row="4" Text="Resizeable"/>
+				</Grid>
+
+				<!-- Property Setters -->
+				<Grid Grid.Column="1">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="2*"/>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition Height="270"/>
+					</Grid.RowDefinitions>
+
+					<TextBox Grid.Row="1" Height="50" Text="{Binding BattlemapName, UpdateSourceTrigger=PropertyChanged}" FontFamily="/Resources/Fonts/#MedievalSharp" FontSize="30" TextAlignment="Center" VerticalContentAlignment="Center"/>
+					
+					<ComboBox Grid.Row="2" Height="50" Text="{Binding BattlemapSize, UpdateSourceTrigger=PropertyChanged}">
+						<ComboBoxItem Content="Small (10x10)"/>
+						<ComboBoxItem Content="Medium (20x20)"/>
+						<ComboBoxItem Content="Large (30x30)"/>
+						<ComboBoxItem Content="Huge (40x40)"/>
+					</ComboBox>
+					
+					<Button Grid.Row="3" Height="50" Content="Select Image" Command="{Binding SelectImageCommand}" HorizontalAlignment="Stretch" FontSize="30" Foreground="Black"/>
+					
+					<RadioButton Grid.Row="4" 
+								 Height="50" 
+								 Content="Yes" 
+								 GroupName="ResizableGroup"
+								 IsChecked="{Binding IsResizable, Mode=TwoWay}"
+								 HorizontalAlignment="Left" 
+								 Margin="43,0,0,0" 
+								 RenderTransformOrigin="-0.208,0.81" 
+								 VerticalAlignment="Center"/>
+					
+					<RadioButton Grid.Row="4" 
+								 Height="50" 
+								 Content="No" 
+								 GroupName="ResizableGroup"
+								 IsChecked="{Binding IsNotResizable, Mode=TwoWay}"
+								 HorizontalAlignment="Left" 
+								 Margin="157,0,0,0" 
+								 RenderTransformOrigin="-0.208,0.81" 
+								 VerticalAlignment="Center"/>
+					
+					<Button Grid.Row="5" Height="50" VerticalAlignment="Top" Content="Save Battlemap" Command="{Binding SaveBattlemapCommand}" HorizontalAlignment="Stretch" FontSize="30" Foreground="Black"/>
+				</Grid>
+
+				<!-- Battlemap Image Preview -->
+				<Grid Grid.Column="2">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="*"/>
+						<RowDefinition Height="20*"/>
+						<RowDefinition Height="*"/>
+					</Grid.RowDefinitions>
+					<Image Grid.Row="1" Source="{Binding BattlemapPreview}" Stretch="Fill" Margin="50, 10"/>
+				</Grid>
+			</Grid>
+		</Viewbox>
 	</Grid>
 </UserControl>

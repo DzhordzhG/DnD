@@ -9,22 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\Backgrounds\blackbg.jpg" />
-    <None Remove="Resources\Backgrounds\filth.jpg" />
-    <None Remove="Resources\Backgrounds\flames.jpg" />
+    <None Remove="Resources\Backgrounds\basic_battlemap.jpg" />
     <None Remove="Resources\Character Images\beholder.png" />
     <None Remove="Resources\Character Images\morgan.png" />
+    <None Remove="Resources\Fonts\MedievalSharp.ttf" />
     <None Remove="Resources\Misc\sword.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Resources\Backgrounds\blackbg.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\Backgrounds\filth.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\Backgrounds\flames.jpg">
+    <Resource Include="Resources\Backgrounds\basic_battlemap.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Character Images\beholder.png">
@@ -41,6 +34,9 @@
     </Resource>
     <Resource Include="Resources\Fonts\Cinzel.ttf">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Fonts\MedievalSharp.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Misc\sword.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
