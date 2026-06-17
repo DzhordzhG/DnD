@@ -30,7 +30,20 @@
 						<RowDefinition Height="*"/>
 						<RowDefinition Height="*"/>
 						<RowDefinition Height="*"/>
+						<RowDefinition Height="*"/>
 					</Grid.RowDefinitions>
+
+					<!-- Start Combat Button -->
+					<Button Content="Start Combat"
+							FontSize="40"
+							FontWeight="SemiBold"
+							VerticalAlignment="Bottom"
+							Command="{Binding StartCombatCommand}"
+							Width="400"
+							Height="70"
+							Grid.Row="2"
+							Grid.Column="1">
+					</Button>
 
 					<!-- DnD Combater -->
 					<TextBlock Text="D&amp;D Combater"
@@ -44,6 +57,28 @@
 								HorizontalAlignment="Center"
 						   VerticalAlignment="Center"/>
 
+					<!-- Create Character Button -->
+					<Button Content="Create Character"
+							FontSize="30"
+							Command="{Binding OpenCharacterCreatorCommand}"
+							Width="320"
+							Height="50"
+							VerticalAlignment="Bottom"
+							FontWeight="Bold"
+							Grid.Row="3"
+							Grid.Column="1"/>
+
+					<!-- Show Characters Button -->
+					<Button Content="Edit Characters"
+							FontSize="30"
+							Command="{Binding ShowCharactersCommand}"
+							FontWeight="Bold"
+							Width="320"
+							Height="50"
+							VerticalAlignment="Bottom"
+							Grid.Row="4"
+							Grid.Column="1"/>
+
 					<!-- Add Battlemap Button -->
 					<Button Content="Add Battlemap"
 							FontSize="30"
@@ -54,40 +89,16 @@
 							FontWeight="Bold"
 							Grid.Row="5"
 							Grid.Column="1"/>
-
-					<!-- Create Character Button -->
-					<Button Content="Create Character"
+					<!-- Edit Battlemap Button -->
+					<Button Content="Edit Battlemap"
 							FontSize="30"
-							Command="{Binding OpenCharacterCreatorCommand}"
+							Command="{Binding BattlemapEditorCommand}"
 							Width="320"
+							VerticalAlignment="Bottom"
 							Height="50"
-							VerticalAlignment="Bottom"
 							FontWeight="Bold"
-							Grid.Row="4"
+							Grid.Row="6"
 							Grid.Column="1"/>
-
-					<!-- Show Characters Button -->
-					<Button Content="Show Characters"
-							FontSize="30"
-							Command="{Binding ShowCharactersCommand}"
-							FontWeight="Bold"
-							Width="320"
-							Height="50"
-							VerticalAlignment="Bottom"
-							Grid.Row="3"
-							Grid.Column="1"/>
-
-					<!-- Start Combat Button -->
-					<Button Content="Start Combat"
-							FontSize="40"
-							FontWeight="SemiBold"
-							VerticalAlignment="Bottom"
-							Command="{Binding StartCombatCommand}"
-							Width="400"
-							Height="70"
-							Grid.Row="2"
-							Grid.Column="1">
-					</Button>
 
 					<!-- Decorative Swords -->
 					<Image Source="/resources/misc/sword.png" Height="149" Margin="-260,500,0,0" VerticalAlignment="Top" Grid.Column="2" Grid.RowSpan="3">

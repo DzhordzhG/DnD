@@ -17,7 +17,7 @@ namespace DnDCombater.ViewModels
 
 		private string? _battlemapName;
 
-		private string? _battlemapSize;
+		private string? _battlemapSize = "1";
 
 		private bool _isResizable;
 
@@ -54,7 +54,7 @@ namespace DnDCombater.ViewModels
 							_sizeString = "Small (10x10)";
 							break;
 						case "2":
-							_sizeString = "Medium (10x10)";
+							_sizeString = "Medium (20x20)";
 							break;
 						case "3":
 							_sizeString = "Large (30x30)";
@@ -159,15 +159,16 @@ namespace DnDCombater.ViewModels
 			}
 
 
-			if (string.IsNullOrWhiteSpace(BattlemapName) || BattlemapSize == String.Empty)
+			if (!int.TryParse(this.BattlemapSize, out var size))
 			{
 				return;
 			}
+
 			var battlemap = new Battlemap
 			{
 				Id = _nextId++,
 				Name = this.BattlemapName ?? $"Battlemap {_nextId}",
-				Size = Int32.Parse(this.BattlemapSize),
+				Size = size,
 				Resizable = this.IsResizable,
 				Image = Converter.ConvertToBytes(BattlemapPreview)
 			};

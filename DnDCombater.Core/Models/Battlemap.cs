@@ -11,5 +11,7 @@
 		public byte[] Image { get; set; }
 
 		public bool Resizable { get; set; } = false;
+
+		public DateTime CreatedAt { get; set; }
 	}
 }
