@@ -1,6 +1,53 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
+## Build artifacts
+bin/
+obj/
+[Bb]uild/
+[Ll]og/
 
-/DnDCombater.Core/obj/Debug/net10.0/DnDCombater.Core.AssemblyInfo.cs
-/DnDCombater.Core/obj/Debug/net10.0/DnDCombater.Core.AssemblyInfoInputs.cache
+## Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## NuGet
+*.nupkg
+*.snupkg
+packages/
+*.nuget.props
+*.nuget.targets
+
+## MSBuild
+*.cache
+*.dbmdl
+
+## WPF / XAML
+*.g.cs
+*.g.i.cs
+*.xaml.csproj.FileListAbsolute.txt
+
+## Publish output
+publish/
+app.publish/
+
+## Temporary files
+*.tmp
+*.temp
+*.bak
+
+## ReSharper / Rider
+_ReSharper*/
+*.DotSettings.user
+.idea/
+
+## Other IDEs
+*.vscode/
+
+## Logs
+*.log
+
+## OS-specific
+# Windows
+Thumbs.db
+Desktop.ini
