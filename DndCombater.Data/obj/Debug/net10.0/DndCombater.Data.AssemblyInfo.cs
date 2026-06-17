@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DndCombater.Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+40d2a583c9b91f22c94084da46c065fcd1c50a35")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e8423d31067c7a95d7cb2d9f5cea002be912af6b")]
 [assembly: System.Reflection.AssemblyProductAttribute("DndCombater.Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DndCombater.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
