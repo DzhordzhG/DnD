@@ -10,6 +10,7 @@ namespace DnDCombater.ViewModels
 		private string _title;
 		public ICommand OpenCharacterCreatorCommand { get; }
 		public ICommand ShowCharactersCommand { get; }
+		public ICommand BattlemapCreatorCommand { get; }
 
 		public string Title
 		{
@@ -26,6 +27,7 @@ namespace DnDCombater.ViewModels
 			Title = "DnD Combater";
 			OpenCharacterCreatorCommand = new RelayCommand(OpenCharacterCreator);
 			ShowCharactersCommand = new RelayCommand(ShowCharacters);
+			BattlemapCreatorCommand = new RelayCommand(OpenBattlemapCreator);
 		}
 
 		private void OpenCharacterCreator()
@@ -33,6 +35,12 @@ namespace DnDCombater.ViewModels
 			var vm = new CharacterCreationViewModel();
 			NavigationService.Navigate(new CharacterCreationView(vm));
 		}
+		private void OpenBattlemapCreator()
+		{
+			var vm = new BattlemapCreatorViewModel();
+			NavigationService.Navigate(new BattlemapCreatorView(vm));
+		}
+
 		private void ShowCharacters()
 		{
 			var vm = new CharacterListViewModel();

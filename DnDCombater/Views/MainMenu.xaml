@@ -6,9 +6,14 @@
              xmlns:local="clr-namespace:DnDCombater.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+	<Grid>
 		<Viewbox Stretch="Fill">
 			<Grid Height="1080" Width="1920">
+
+				<Grid.Resources>
+					<ImageBrush x:Key="AddButtonImageBrush" ImageSource="/resources/misc/sword.png" Stretch="UniformToFill"/>
+				</Grid.Resources>
+
 				<Grid Grid.Row="0">
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="30*" />
@@ -18,8 +23,7 @@
 
 					<!-- Rows -->
 					<Grid.RowDefinitions>
-						<RowDefinition Height="*"/>
-						<RowDefinition Height="1*"/>
+						<RowDefinition Height="2*"/>
 						<RowDefinition Height="2*"/>
 						<RowDefinition Height="*"/>
 						<RowDefinition Height="*"/>
@@ -27,67 +31,74 @@
 						<RowDefinition Height="*"/>
 						<RowDefinition Height="*"/>
 					</Grid.RowDefinitions>
-					<TextBlock Text="D&amp;D Combater"
-                   FontSize="130"
-				   Grid.Row="2"
-				   Grid.Column="1"
-				   Foreground="CornflowerBlue"
-				   FontWeight="Heavy"
-				   FontFamily="resources\fonts\#Cinzel"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"/>
 
-					<Button 
-					Content="Add Battlemap"
-					FontSize="30"
-                    Command="{Binding AddBattleMapCommand}"
-					Width="320"
-						VerticalAlignment="Top"
-					Height="50"
-					FontWeight="Bold"
-					Grid.Row="7"
-					Grid.Column="1"/>
-					
-					<Button Content="Show Battlemaps"
-					FontSize="30"
-                    Command="{Binding ShowBattlemapsCommand}"
-					FontWeight="Bold"
-					Width="320"
-							VerticalAlignment="Top"
-					Height="50"
-					Grid.Row="6"
-					Grid.Column="1"/>
-					
-					<Button 
-					Content="Create Character"
-					FontSize="30"
-                    Command="{Binding OpenCharacterCreatorCommand}"
-					Width="320"
-					Height="50"
-						VerticalAlignment="Top"
-					FontWeight="Bold"
-					Grid.Row="5"
-					Grid.Column="1"/>
-					
+					<!-- DnD Combater -->
+					<TextBlock Text="D&amp;D Combater"
+						   FontSize="130"
+						   Grid.Row="1"
+						   Grid.Column="1"
+						   Foreground="CornflowerBlue"
+						   FontWeight="Heavy"
+						   FontFamily="resources\fonts\#Cinzel"
+						   HorizontalAlignment="Center"
+						   VerticalAlignment="Center"/>
+
+					<!-- Add Battlemap Button -->
+					<Button Content="Add Battlemap"
+							FontSize="30"
+							Command="{Binding BattlemapCreatorCommand}"
+							Width="320"
+							VerticalAlignment="Bottom"
+							Height="50"
+							FontWeight="Bold"
+							Grid.Row="5"
+							Grid.Column="1"/>
+
+					<!-- Create Character Button -->
+					<Button Content="Create Character"
+							FontSize="30"
+							Command="{Binding OpenCharacterCreatorCommand}"
+							Width="320"
+							Height="50"
+							VerticalAlignment="Bottom"
+							FontWeight="Bold"
+							Grid.Row="4"
+							Grid.Column="1"/>
+
+					<!-- Show Characters Button -->
 					<Button Content="Show Characters"
-					FontSize="30"
-                    Command="{Binding ShowCharactersCommand}"
-					FontWeight="Bold"
-					Width="320"
-					Height="50"
-							VerticalAlignment="Top"
-					Grid.Row="4"
-					Grid.Column="1"/>
-					
+							FontSize="30"
+							Command="{Binding ShowCharactersCommand}"
+							FontWeight="Bold"
+							Width="320"
+							Height="50"
+							VerticalAlignment="Bottom"
+							Grid.Row="3"
+							Grid.Column="1"/>
+
+					<!-- Start Combat Button -->
 					<Button Content="Start Combat"
-					FontSize="40"
-					FontWeight="SemiBold"
-							VerticalAlignment="Top"
-                    Command="{Binding StartCombatCommand}"
-					Width="400"
-					Height="70"
-					Grid.Row="3"
-					Grid.Column="1"/>
+							FontSize="40"
+							FontWeight="SemiBold"
+							VerticalAlignment="Bottom"
+							Command="{Binding StartCombatCommand}"
+							Width="400"
+							Height="70"
+							Grid.Row="2"
+							Grid.Column="1">
+					</Button>
+
+					<!-- Decorative Swords -->
+					<Image Source="/resources/misc/sword.png" Height="149" Margin="270,238,789,0" VerticalAlignment="Top" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="3">
+						<Image.RenderTransform>
+							<RotateTransform Angle="270" />
+						</Image.RenderTransform>
+					</Image>
+					<Image Source="/resources/misc/sword.png" Height="149" Margin="129,222,44,0" VerticalAlignment="Top" Grid.Column="2" Grid.RowSpan="2">
+						<Image.RenderTransform>
+							<RotateTransform Angle="90" />
+						</Image.RenderTransform>
+					</Image>
 				</Grid>
 			</Grid>
 		</Viewbox>

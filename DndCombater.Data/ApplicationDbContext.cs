@@ -1,4 +1,5 @@
-﻿using DnDCombater.Models;
+﻿using DnDCombater.Core.Models;
+using DnDCombater.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace DndCombater.Data
@@ -7,6 +8,8 @@ namespace DndCombater.Data
 	{
 		public DbSet<Character> Characters { get; set; }
 		public DbSet<CharacterClass> CharacterClasses { get; set; }
+		public DbSet<Battlemap> Battlemaps { get; set; }
+
 		public string DbPath { get; }
 
 		public ApplicationDbContext()
