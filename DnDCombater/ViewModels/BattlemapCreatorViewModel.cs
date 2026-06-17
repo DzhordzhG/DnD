@@ -170,7 +170,8 @@ namespace DnDCombater.ViewModels
 				Name = this.BattlemapName ?? $"Battlemap {_nextId}",
 				Size = size,
 				Resizable = this.IsResizable,
-				Image = Converter.ConvertToBytes(BattlemapPreview)
+				Image = Converter.ConvertToBytes(BattlemapPreview),
+				CreatedAt = DateTime.UtcNow
 			};
 
 			db.Battlemaps.Add(battlemap);

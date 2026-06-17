@@ -63,6 +63,9 @@
 
 							<GridViewColumn Header="Size" 
 								DisplayMemberBinding="{Binding Size}" />
+							
+							<GridViewColumn Header="Created At" 
+								DisplayMemberBinding="{Binding CreatedAt}" />
 
 						</GridView>
 					</ListView.View>
