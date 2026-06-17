@@ -9,7 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove=".gitignore" />
     <None Remove="Resources\Backgrounds\blackbg.jpg" />
     <None Remove="Resources\Backgrounds\filth.jpg" />
     <None Remove="Resources\Backgrounds\flames.jpg" />
