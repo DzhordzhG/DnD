@@ -1,6 +1,10 @@
 ## Build artifacts
-bin/
-obj/
+DnDCombater/bin/
+DnDCombater/obj/
+DnDCombater.Data/bin/
+DnDCombater.Data/obj/
+DnDCombater.Core/bin/
+DnDCombater.Core/obj/
 [Bb]uild/
 [Ll]og/
 
